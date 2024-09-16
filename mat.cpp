@@ -1,3 +1,4 @@
+#include <array>
 #include <exception>
 #include <iomanip>
 #include <iostream>
@@ -8,7 +9,7 @@
 template <typename T, unsigned M, unsigned N>
 class Matrix {
 protected:
-    T buffer[M*N] = {};
+    std::array<T, M*N> buffer = {};
 public:
     Matrix() = default;
     static Matrix<T, N, M> Identity() {
@@ -21,13 +22,6 @@ public:
 
         return mat;
     };
-    // Matrix(const T** mat) {
-    //     for (unsigned i = 0; i < M; i++) {
-    //         for (unsigned j = 0; j < N; j++) {
-    //             buffer[M * i + j] = mat[M * i + j];
-    //         }
-    //     }
-    // }
     Matrix(std::initializer_list<std::initializer_list<T>> init) {
         unsigned i = 0;
         for (const auto& row : init) {
