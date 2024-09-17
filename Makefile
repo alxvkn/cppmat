@@ -2,11 +2,11 @@ CXX = clang++
 
 CXXFLAGS=-std=c++23 -Wall -Wconversion
 
-mat: mat.o
+test: test.o
 	$(CXX) $^ -o $@
 
-run: mat
-	./mat
+run: test
+	./test
 
 clean:
-	rm mat.o mat
+	rm test.o test
