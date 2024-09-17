@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mat.hpp"
+#include "Matrix.hpp"
 
 #define dbgout(expr) do { std::cout << #expr":\n" << (expr) << std::endl; } while (0)
 #define log(msg) do { std::cout << msg << std::endl; } while (0)
